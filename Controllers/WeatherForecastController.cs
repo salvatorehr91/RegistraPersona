@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace RegistraPersona.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+// [Route("[controller]")]
+[Route("api/weatherforecast")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]

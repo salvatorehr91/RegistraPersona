@@ -4,3 +4,8 @@ GET {{RegistraPersona_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{RegistraPersona_HostAddress}}/persona/
+Accept: application/json
+
+###
