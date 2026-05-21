@@ -12,8 +12,8 @@ namespace RegistraPersona.Services
         {
             Personas = new List<Persona>
             {
-                new Persona { Id = 1, Nombre = "Juan", Apellido = "Perez", Edad = 30 },
-                new Persona { Id = 2, Nombre = "Maria", Apellido = "Gomez", Edad = 25 }
+                new Persona { Id = 1, Nombre = "Juan", APaterno = "Perez", AMaterno = "Gonzalez", Estatus = "Activo" },
+                new Persona { Id = 2, Nombre = "Maria", APaterno = "Gomez", AMaterno = "Rodriguez", Estatus = "Inactivo" }
             };
         }
 

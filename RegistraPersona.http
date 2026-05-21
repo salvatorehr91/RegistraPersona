@@ -9,3 +9,8 @@ GET {{RegistraPersona_HostAddress}}/persona/
 Accept: application/json
 
 ###
+
+GET {{RegistraPersona_HostAddress}}/alumnos/
+Accept: application/json
+
+###

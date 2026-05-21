@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("55021e9c-cef9-47aa-bbdc-90e718d12306")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("RegistraPersona")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fee7ca87935b27aed442ed5197792f256064cf31")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8f5fe7b8ce4470ccb2b92e079ecf417eda1f9ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("RegistraPersona")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RegistraPersona")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

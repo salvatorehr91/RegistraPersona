@@ -1,5 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// Leer cadena de conexión desde appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
+
+// Registrar DbContext con SQL Server
+builder.Services.AddDbContext<RegistraPersona.Context.ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<RegistraPersona.Context.ConexionSqlServer>(options =>
+    options.UseSqlServer(connectionString));
+    
 // Add services to the container.
 
 builder.Services.AddControllers();

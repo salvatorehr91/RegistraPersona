@@ -20,8 +20,8 @@ public class PersonaController : ControllerBase
     // {
     //     return new List<Persona>
     //     {
-    //         new Persona { Id = 1, Nombre = "Juan", Apellido = "Perez", Edad = 30 },
-    //         new Persona { Id = 2, Nombre = "Maria", Apellido = "Gomez", Edad = 25 }
+    //         new Persona { Id = 1, Nombre = "Juan", APaterno = "Perez", AMaterno = "Gonzalez", Edad = 30 },
+    //         new Persona { Id = 2, Nombre = "Maria", APaterno = "Gomez", AMaterno = "Rodriguez", Edad = 25 }
     //     };
     // }
 
@@ -29,7 +29,7 @@ public class PersonaController : ControllerBase
     public ActionResult<Persona> Get(int id)
     {
         var persona = PersonaService.Get(id);
-        // var persona = new Persona { Id = id, Nombre = "Juan", Apellido = "Perez", Edad = 30 };
+        // var persona = new Persona { Id = id, Nombre = "Juan", APaterno = "Perez", AMaterno = "Gonzalez", Edad = 30 };
         if(persona is null)
         {        
             _logger.LogInformation("El ID {Id} no fue encontrado", id);
@@ -43,7 +43,7 @@ public class PersonaController : ControllerBase
     public IActionResult Post([FromBody] Persona persona)
     {
         // Aquí podrías agregar la lógica para guardar la persona en una base de datos
-        _logger.LogInformation("Persona recibida: {Nombre} {Apellido}, Edad: {Edad}", persona.Nombre, persona.Apellido, persona.Edad);
+        _logger.LogInformation("Persona recibida: {Nombre} {APaterno} {AMaterno}, Estatus: {Estatus}", persona.Nombre, persona.APaterno, persona.AMaterno, persona.Estatus);
 
         PersonaService.Add(persona);
         // return Ok(persona);
@@ -65,7 +65,8 @@ public class PersonaController : ControllerBase
         }
 
         // existingPersona.Nombre = persona.Nombre;
-        // existingPersona.Apellido = persona.Apellido;
+        // existingPersona.APaterno = persona.APaterno;
+        // existingPersona.AMaterno = persona.AMaterno;
         // existingPersona.Edad = persona.Edad;
         PersonaService.Update(persona);
 
