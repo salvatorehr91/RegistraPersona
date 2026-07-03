@@ -1,6 +1,12 @@
 @RegistraPersona_HostAddress = http://localhost:5016
 
-GET {{RegistraPersona_HostAddress}}/weatherforecast/
+
+GET {{RegistraPersona_HostAddress}}/persona/
+Accept: application/json
+
+###
+
+GET {{RegistraPersona_HostAddress}}/alumnos/
 Accept: application/json
 
 ###
