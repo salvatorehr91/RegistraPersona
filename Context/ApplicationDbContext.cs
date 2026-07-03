@@ -3,14 +3,9 @@ using RegistraPersona.Models;
 
 namespace RegistraPersona.Context
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {
-        public DbSet<DTOESTUDIANTE> DTOESTUDIANTE { get; set; } 
-
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {   
-        }
+        public DbSet<DTOESTUDIANTE> DTOESTUDIANTE { get; set; }
     }
 
     public class ConexionSqlServer : DbContext

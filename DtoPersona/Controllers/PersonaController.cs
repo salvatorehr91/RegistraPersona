@@ -1,8 +1,8 @@
-using RegistraPersona.Models;
-using RegistraPersona.Services;
+using RegistraPersona.DtoPersona.Models;
+using RegistraPersona.DtoPersona.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RegistraPersona.Controllers;
+namespace RegistraPersona.DtoPersona.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -17,19 +17,12 @@ public class PersonaController : ControllerBase
 
     [HttpGet]
     public ActionResult<List<Persona>> GetAll() => PersonaService.GetAll();
-    // {
-    //     return new List<Persona>
-    //     {
-    //         new Persona { Id = 1, Nombre = "Juan", APaterno = "Perez", AMaterno = "Gonzalez", Edad = 30 },
-    //         new Persona { Id = 2, Nombre = "Maria", APaterno = "Gomez", AMaterno = "Rodriguez", Edad = 25 }
-    //     };
-    // }
 
     [HttpGet("{id}")]
     public ActionResult<Persona> Get(int id)
     {
         var persona = PersonaService.Get(id);
-        // var persona = new Persona { Id = id, Nombre = "Juan", APaterno = "Perez", AMaterno = "Gonzalez", Edad = 30 };
+
         if(persona is null)
         {        
             _logger.LogInformation("El ID {Id} no fue encontrado", id);

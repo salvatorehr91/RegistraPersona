@@ -1,6 +1,6 @@
-using RegistraPersona.Models;
+using RegistraPersona.DtoPersona.Models;
 
-namespace RegistraPersona.Services
+namespace RegistraPersona.DtoPersona.Services
 {
     public static class PersonaService
     {

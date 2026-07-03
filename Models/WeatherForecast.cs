@@ -1,4 +1,4 @@
-namespace RegistraPersona;
+namespace RegistraPersona.Models;
 
 public class WeatherForecast
 {

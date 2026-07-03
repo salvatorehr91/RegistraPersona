@@ -11,15 +11,13 @@ namespace RegistraPersona.Controllers;
 public class AlumnosController : ControllerBase
 {
     private readonly ConexionSqlServer _conexion;
-
+    private readonly ILogger<AlumnosController> _logger;
     public AlumnosController(ILogger<AlumnosController> logger, ConexionSqlServer conexion)
     {
         _conexion = conexion;
         _logger = logger;
     }
     
-    private readonly ILogger<AlumnosController> _logger;
-
     // GET all action
     [HttpGet]
     public ActionResult<List<DTOESTUDIANTE>> GetAll()
@@ -27,7 +25,6 @@ public class AlumnosController : ControllerBase
         var alumnos = _conexion.DTOESTUDIANTE.ToList();
         return Ok(alumnos);
     }
-
 
     // GET by Id action
     [HttpGet("{matricula}")]
@@ -55,9 +52,10 @@ public class AlumnosController : ControllerBase
         _conexion.SaveChanges();
         return CreatedAtAction(nameof(Get), new { matricula = alumno.VMATRICULA }, alumno);
     }
-    
+
     // POST action by SP
     [HttpPost("sp")]
+    [Consumes("application/json")]
     public IActionResult PostSP([FromBody] DTOESTUDIANTE alumno)
     {
         _logger.LogInformation("Alumno recibido para SP: {VNOMBRE} {VAPATERNO} {VAMATERNO}, Edad: {DNACIMIENTO}, Estatus: {VSTATUS}", alumno.VNOMBRE, alumno.VAPATERNO, alumno.VAMATERNO, alumno.DNACIMIENTO, alumno.VSTATUS);
@@ -68,7 +66,8 @@ public class AlumnosController : ControllerBase
 
         if (result != null)
         {
-            return Ok("Alumno insertado correctamente con la matrícula: " + result.VMATRICULA);
+            return Ok(new { Consumes = "application/json", Message = "Matricula generada: " + result.VMATRICULA });
+            // return Ok("Alumno insertado correctamente con la matrícula: " + result.VMATRICULA);
         }
         else
         {

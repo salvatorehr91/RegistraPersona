@@ -5,7 +5,7 @@ namespace RegistraPersona.Services
 {
     public static class AlumnosService
     {
-        static List<DTOESTUDIANTE> Alumnos { get; }
+        static List<DTOESTUDIANTE> Alumnos { get; } = default!;
 
         // static int nextId = 3;
 

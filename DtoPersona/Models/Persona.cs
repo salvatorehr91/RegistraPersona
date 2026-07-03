@@ -1,4 +1,4 @@
-namespace RegistraPersona.Models
+namespace RegistraPersona.DtoPersona.Models
 {
     public class Persona
     {
